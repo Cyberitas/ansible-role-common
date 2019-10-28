@@ -23,3 +23,13 @@
   yum:
     name: git2u
     state: present
+
+- name: Setup project directories.
+  file:
+    path: "{{ item.path }}"
+    state: directory
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.perm }}"
+  loop: "{{ project_dirs }}"
+  when: project_dirs is defined
