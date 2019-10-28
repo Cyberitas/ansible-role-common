@@ -26,27 +26,10 @@
 
 - name: Setup project directories
   file:
-    path: "{{ item.site_dir }}"
+    path: "{{ item.path }}"
     state: directory
-    owner: "{{ role_user }}"
-    group: "{{ role_group }}"
-    mode: '0775'
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.perm }}"
   loop: "{{ project_dirs }}"
-
-- name: Setup project shared directories
-  file:
-    path: "{{ item.shared_dir }}"
-    state: directory
-    owner: "{{ role_user }}"
-    group: "{{ role_group }}"
-    mode: '0775'
-  loop: "{{ project_dirs }}"
-
-- name: Set /srv to role user permissions
-  file:
-    path: /srv
-    state: directory
-    recurse: yes
-    owner: "{{ role_user }}"
-    group: "{{ role_group }}"
-    mode: '0775'
+  when: project_dirs is defined
