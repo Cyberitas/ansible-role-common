@@ -1,5 +1,6 @@
 galaxy_info:
-  author: James Dugger 
+  author: James Dugger
+  role_name: common
   description: Install Common tasks on RHEL/CentOS
   company: Cyberitas Technologies, LLC
   license: license (MIT)
