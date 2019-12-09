@@ -2,6 +2,18 @@ Ansible Role: Common Tasks
 =========
 
 Ansible role to install common tasks on RHEL/CentOS
+This role installs the following applications/services
+- screen 
+- telnet 
+- deltarpm 
+- dos2unix 
+- vim 
+- zip 
+- unzip 
+- bzip2 
+- gzip 
+- patch 
+- wget
 
 Requirements
 ------------
