@@ -1,7 +1,7 @@
 ---
 - name: Install common ops tools needed on all servers
   yum:
-    name: ['screen', 'telnet', 'deltarpm', 'dos2unix', 'vim', 'zip', 'unzip', 'bzip2', 'gzip', 'patch']
+    name: ['screen', 'telnet', 'deltarpm', 'dos2unix', 'vim', 'zip', 'unzip', 'bzip2', 'gzip', 'patch', 'wget']
     state: present
 
 - name: Remove git version 1
