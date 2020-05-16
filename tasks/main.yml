@@ -9,6 +9,11 @@
     name: git
     state: removed
 
+- name: Remove git version 2u
+  yum:
+    name: git2u
+    state: removed
+
 - name: Installing epel-release package
   yum:
     name: epel-release
@@ -19,9 +24,9 @@
     name: https://repo.ius.io/ius-release-el7.rpm
     state: present
 
-- name: Install git version 2
+- name: Install git version 2 (git2u gone, use git222)
   yum:
-    name: git2u
+    name: git222
     state: present
 
 - name: Setup project directories
