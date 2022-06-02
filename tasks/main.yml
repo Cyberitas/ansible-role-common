@@ -4,29 +4,14 @@
     name: ['screen', 'telnet', 'deltarpm', 'dos2unix', 'vim', 'zip', 'unzip', 'bzip2', 'gzip', 'patch', 'wget']
     state: present
 
-- name: Remove git version 1
+- name: get git
   yum:
     name: git
-    state: removed
-
-- name: Remove git version 2u
-  yum:
-    name: git2u
-    state: removed
+    state: present
 
 - name: Installing epel-release package
   yum:
     name: epel-release
-    state: present
-
-- name: Installing IUS repo
-  yum:
-    name: https://repo.ius.io/ius-release-el7.rpm
-    state: present
-
-- name: Install git version 2 (git2u gone, use git222)
-  yum:
-    name: git222
     state: present
 
 - name: Setup project directories
